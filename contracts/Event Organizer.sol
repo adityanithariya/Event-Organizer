@@ -168,9 +168,8 @@ contract EventContract {
             "You are not verified organizer, try using verified account!"
         );
         uint256 ticketsSold = _event.ticketCount - _event.ticketRemain;
-        uint256 amountToPay = (_event.price * ticketsSold * 1000000000) -
+        uint256 amountToPay = (_event.price * ticketsSold) -
             (_event.ticketsReturned * _event.price);
-        // return amountToPay;
         require(
             amountToPay > 0,
             "You have taken money of all the tickets sold till now, try again after some tickets are sold!"
